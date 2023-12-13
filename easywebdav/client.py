@@ -72,7 +72,7 @@ class OperationFailed(WebdavException):
         super(OperationFailed, self).__init__(msg)
 
 class Client(object):
-    def __init__(self, host, port=0, auth=None, username=None, password=None,
+    def __init__(self, host, port=None, auth=None, username=None, password=None,
                  protocol='http', verify_ssl=True, path=None, cert=None):
         if not port:
             port = 443 if protocol == 'https' else 80
