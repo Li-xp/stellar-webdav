@@ -76,9 +76,9 @@ class Client(object):
                  protocol='http', verify_ssl=True, path=None, cert=None):
         if not port:
             port = 443 if protocol == 'https' else 80
-        self.baseurl = '{0}://{1}:{2}'.format(protocol, host, port)
+        self.baseurl = '{0}://{1}:{2}/dav'.format(protocol, host, port)
         if path:
-            self.baseurl = '{0}/{1}'.format(self.baseurl, path)
+            self.baseurl = '{0}/{1}/dav'.format(self.baseurl, path)
         self.cwd = '/'
         self.session = requests.session()
         self.session.verify = verify_ssl
