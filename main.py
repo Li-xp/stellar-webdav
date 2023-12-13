@@ -133,7 +133,7 @@ class WebdavPlugin(StellarPlayer.IStellarPlayerPlugin):
         self.save_config()
         self.player.loadingAnimation('login')
         try:
-            self.webdav = easywebdav.connect(self.host, port=self.port, username=self.username,
+            self.webdav = easywebdav.connect(self.host, port=int(self.port), username=self.username,
                                              password=self.password, protocol=self.protocol,
                                              verify_ssl=self.verify)
             self.webdav.ls()
